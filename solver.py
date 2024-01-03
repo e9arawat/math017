@@ -10,9 +10,9 @@ words_dict = {
     60: "sixty",
     50: "fifty",
     40: "forty",
-    30: "trirty",
+    30: "thirty",
     20: "twenty",
-    19: "ninteen",
+    19: "nineteen",
     18: "eighteen",
     17: "seventeen",
     16: "sixteen",
@@ -54,8 +54,11 @@ def find_length(num):
 
 def solver(n: int = 1, m: int = 1000):
     """function to find length of all number in words"""
+    start, end = 1, n
+    if m:
+        start, end = n, m
     ans = 0
-    for i in range(n, m + 1):
+    for i in range(start, end + 1):
         ans += find_length(i)
     return ans
 
