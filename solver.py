@@ -43,11 +43,11 @@ def find_length(num):
     ans = 0
     if len(str(num)) == 3 and num % 100 != 0:
         ans += 3
-    for obj in words_dict.items():
-        if num >= obj[0]:
+    for key, value in words_dict.items():
+        if num >= key:
             if num >= 100:
-                ans += find_length(num // obj[0])
-            ans += len(obj[1]) + find_length(num % obj[0])
+                ans += find_length(num // key)
+            ans += len(value) + find_length(num % key)
             return ans
     return 0
 
